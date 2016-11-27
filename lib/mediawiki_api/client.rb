@@ -117,6 +117,10 @@ module MediawikiApi
       @conn.get '/index.php', action: 'raw', title: title
     end
 
+    def get_thumbnail(image, width)
+      @conn.get '/thumb.php', f: image, width: 300
+    end
+
     def list(type, params = {})
       subquery(:list, type, params)
     end
